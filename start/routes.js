@@ -23,4 +23,5 @@ Route
 .group(()=>{
     Route.post('/save', 'ItemController.save').as('store').validator('ItemValidator');
     Route.get('/create', 'ItemController.create');
+    Route.get('/delete/:id', 'ItemController.delete').as('delete');
 }).prefix('/item');
