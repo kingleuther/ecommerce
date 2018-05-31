@@ -23,5 +23,4 @@ Route
 .group(()=>{
     Route.post('/save', 'ItemController.save').as('store');
     Route.get('/create', 'ItemController.create');
-    Route.get('/list','ItemController.index');
 }).prefix('/item');

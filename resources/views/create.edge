@@ -16,8 +16,21 @@
             <form action="{{ route('store')}}" method="POST">
             {{csrfField()}}
               <input type="text" class="form-control" placeholder="Type in item name ..." name="item_name" autofocus>
+              @if(hasErrorFor('item_name'))
+                <span class = "text-danger">
+                    {{getErrorFor('item_name')}}
+                </span>
+              @endif
               <input type="text" class="form-control" placeholder="Type in price ..." name="price" autofocus>
-              <button>Submit</button>
+              @if(hasErrorFor('price'))
+                <span class = "text-danger">
+                    {{getErrorFor('price')}}
+                </span>
+              @endif
+              <div class = "row">
+                  <div class = "col col-lg-12">                         <button class = "btn btn-sm btn-primary">Submit</button>
+                  </div>
+              </div>
             </form>
           </div>
         </div>
