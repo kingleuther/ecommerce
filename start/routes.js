@@ -21,6 +21,6 @@ Route.on('/').render('welcome');
 
 Route
 .group(()=>{
-    Route.post('/save', 'ItemController.save').as('store');
+    Route.post('/save', 'ItemController.save').as('store').validator('ItemValidator');
     Route.get('/create', 'ItemController.create');
 }).prefix('/item');
