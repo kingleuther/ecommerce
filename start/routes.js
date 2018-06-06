@@ -15,9 +15,18 @@
 
 const Route = use('Route');
 
-Route.on('/').render('welcome');
+// Route.on('/').render('welcome');
 
 
+
+Route
+.group(()=>{
+    Route.post('/login', 'SessionController.login').as('loginUser');
+    Route.post('/register/create','SessionController.register').as('registerUser');
+    Route.get('/logout','SessionController.logout');
+    Route.get('/', 'SessionController.show');
+    Route.get('/register', ({view}) => view.render('register')); 
+});
 
 Route
 .group(()=>{

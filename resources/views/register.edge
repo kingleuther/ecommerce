@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+          {{ css('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css') }}
+    </head>
+    <body>
+        <form action="{{ route('registerUser')}}" method="POST">
+        {{csrfField()}}
+            <div class = 'container-fluid' style = "margin-top:100px;
+                            border:1px solid #cecece;
+                            min-height:200px;
+                            width:450px">
+                <div class = 'row'>
+                    <div class = 'col-md-12'>
+                        <span class = 'label'>Username</span>
+                        <input type='text' class = "form-control" name= 'username'/>
+                    </div>
+                </div>
+                <div class = 'row'>
+                    <div class = 'col-md-12'>
+                        <span class = 'label'>Password</span>
+                        <input type='password' class = "form-control" name= 'password'/>
+                    </div>
+                </div>
+                <div class = 'row'>
+                    <div class = 'col-md-12'>
+                        <span class = 'label'>Email</span>
+                        <input type='email' class = "form-control" name= 'email'/>
+                    </div>
+                </div>            
+                <div class = 'row'>
+                    <div class = 'col-md-12'>
+                        <span class = 'label'>Role</span>
+                        <select class = "form-control" name='role'>
+                            <option selected hidden>Select your Role</option>
+                            <option value = 'Seller'}>Seller</option>
+                            <option value = 'Buyer'>Buyer</option>
+                        </select>
+                    </div>
+                </div>
+                <br />
+                <div class = 'row'>
+                    <div class = 'col-md-8'>
+                        <button class = 'btn btn-primary'>Register</button>
+            </form>              
+                        <button class = 'btn btn-danger'>Cancel</button>
+                    </div>
+                    <div class = 'col-md-4'>
+                    </div>
+                </div>
+                <br />                         
+            </div>  
+    </body>
+</html>

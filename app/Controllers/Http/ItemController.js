@@ -13,7 +13,8 @@ class ItemController {
         response.redirect('/item/create');
     }
 
-    async create({view}){
+    async create({view, request}){
+        console.log('sikretong malupeeeeeet pwede pabulong',request.auth);
         let items = await Item.all();
         return view.render('create', {items:items.toJSON()});
     }
@@ -27,7 +28,7 @@ class ItemController {
                 notification: 'Item deleted successfully'
             });
             return response.redirect('/item/create');           
-        }
+        }          
         session.flashAll({
             notification: 'Item was not found'
         });

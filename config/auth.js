@@ -27,10 +27,10 @@ module.exports = {
   |
   */
   session: {
-    serializer: 'lucid',
+    serializer: 'database',
     model: 'App/Models/User',
     scheme: 'session',
-    uid: 'email',
+    uid: 'username',
     password: 'password'
   },
 
@@ -48,10 +48,10 @@ module.exports = {
   |
   */
   basic: {
-    serializer: 'lucid',
+    serializer: 'database',
     model: 'App/Models/User',
     scheme: 'basic',
-    uid: 'email',
+    uid: 'id',
     password: 'password'
   },
 
@@ -65,10 +65,10 @@ module.exports = {
   |
   */
   jwt: {
-    serializer: 'lucid',
+    serializer: 'database',
     model: 'App/Models/User',
     scheme: 'jwt',
-    uid: 'email',
+    uid: 'id',
     password: 'password',
     options: {
       secret: Env.get('APP_KEY')
